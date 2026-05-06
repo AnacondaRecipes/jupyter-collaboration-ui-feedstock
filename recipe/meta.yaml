@@ -37,14 +37,16 @@ test:
     - jupyter labextension list --debug 2>&1 | findstr /r /i "collaboration-extension.*OK"  # [win]
 
 about:
+  home: https://pypi.org/project/jupyter-collaboration-ui
   summary: JupyterLab/Jupyter Notebook 7+ extension providing user interface integration for real time collaboration
+  description: JupyterLab/Jupyter Notebook 7+ extension providing user interface integration for real time collaboration
   license: BSD-3-Clause
-  license_file:
+  license_family: BSD
+  license_file: 
     - LICENSE
     - jupyter_collaboration_ui/labextension/static/third-party-licenses.json
-  homepage: https://pypi.org/project/jupyter-collaboration-ui
-  repository: https://github.com/jupyterlab/jupyter-collaboration
-  documentation: https://jupyterlab-realtime-collaboration.readthedocs.io
+  dev_url: https://github.com/jupyterlab/jupyter-collaboration
+  doc_url: https://jupyterlab-realtime-collaboration.readthedocs.io
 
 extra:
   recipe-maintainers:
