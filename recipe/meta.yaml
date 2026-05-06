@@ -34,7 +34,7 @@ test:
     - pip check
     - jupyter labextension list --debug
     - jupyter labextension list --debug 2>&1 | grep -iE "collaboration-extension.*OK"    # [unix]
-    - jupyter labextension list --debug 2>&1 | findstr /c "collaboration-extension.*OK"  # [win]
+    - jupyter labextension list --debug 2>&1 | findstr /r /i "collaboration-extension.*OK"  # [win]
 
 about:
   summary: JupyterLab/Jupyter Notebook 7+ extension providing user interface integration for real time collaboration
