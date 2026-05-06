@@ -24,17 +24,17 @@ requirements:
   run:
     - python
 
-tests:
-  - python:
-      imports: jupyter_collaboration_ui
-      pip_check: true
-  - requirements:
-      run:
-        - jupyterlab
-    script:
-      - pip check
-      - jupyter labextension list --debug
-      - jupyter labextension list --debug 2>&1 | ${{ grep }} "collaboration-extension.*OK"
+test:
+  imports:
+    - jupyter_collaboration_ui
+  requires:
+    - jupyterlab
+    - pip
+  commands:
+    - pip check
+    - jupyter labextension list --debug
+    - jupyter labextension list --debug 2>&1 | grep -iE "collaboration-extension.*OK"    # [unix]
+    - jupyter labextension list --debug 2>&1 | findstr /c "collaboration-extension.*OK"  # [win]
 
 about:
   summary: JupyterLab/Jupyter Notebook 7+ extension providing user interface integration for real time collaboration
