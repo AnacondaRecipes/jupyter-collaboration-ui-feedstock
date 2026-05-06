@@ -1,16 +1,9 @@
-# yaml-language-server: $schema=https://raw.githubusercontent.com/prefix-dev/recipe-format/main/schema.json
-schema_version: 1
-
-context:
-  version: "2.3.0"
-  jupyterlab_min: "4.5.0"
-  jupyterlab_max: "5.0"
-  python_check_max: "3.14"
-  grep: ${{ 'grep -iE' if unix else 'findstr /c' }}
+{% set name = "jupyter-collaboration-ui" %}
+{% set version = "2.3.0" %}
 
 package:
-  name: jupyter-collaboration-ui
-  version: ${{ version }}
+  name: {{ name|lower }}
+  version: {{ version }}
 
 source:
   url: https://pypi.org/packages/source/j/jupyter-collaboration-ui/jupyter_collaboration_ui-${{ version }}.tar.gz
